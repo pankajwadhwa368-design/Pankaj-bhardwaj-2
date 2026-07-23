@@ -534,55 +534,22 @@ color: #e5e7eb;
           </div>
         </div>
         <script>
-const eventID = 'evt_' + crypto.randomUUID();
-
-// Pixel पहले से init है
-fbq('init', '1560571375771260');
-
-// Lead Event
-fbq('track', 'Lead', {
-  value: 9.99,
-  currency: 'INR'
-}, {
-  eventID: eventID
-});
-
-// Subscribe Event
-fbq('track', 'Subscribe', {
-  value: 9.99,
-  currency: 'INR'
-}, {
-  eventID: eventID
-});
-
-// Send Lead to CAPI
-fetch('/api/meta', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    pixelId: '1560571375771260',
-    eventID: eventID,
-    eventName: 'Lead',
+            function telegramClick() {
+  fbq('track', 'Lead', {
+    content_name: 'Telegram Channel Join',
+    content_category: 'Stock Market',
+    source: 'Landing Page',
+    button_name: 'Join Telegram',
     value: 9.99,
     currency: 'INR'
-  })
-});
+  });
 
-// Send Subscribe to CAPI
-fetch('/api/meta', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    pixelId: '1560571375771260',
-    eventID: eventID,
-    eventName: 'Subscribe',
+  fbq('track', 'Subscribe', {
+    content_name: 'Telegram Subscription',
     value: 9.99,
     currency: 'INR'
-  })
-}); </script>
+  });
+}
+        </script>
       </body>
     </html>
