@@ -535,21 +535,10 @@ color: #e5e7eb;
         </div>
         <script>
             function telegramClick() {
-  fbq('track', 'Lead', {
-    content_name: 'Telegram Channel Join',
-    content_category: 'Stock Market',
-    source: 'Landing Page',
-    button_name: 'Join Telegram',
-    value: 9.99,
-    currency: 'INR'
-  });
-
-  fbq('track', 'Subscribe', {
-    content_name: 'Telegram Subscription',
-    value: 9.99,
-    currency: 'INR'
-  });
-}
+  fbq('track', 'subscribe', {
+value: 9.99,
+currency: 'EUR'
+});
         </script>
       </body>
     </html>
